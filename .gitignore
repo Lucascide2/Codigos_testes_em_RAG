@@ -1,0 +1,9 @@
+*/.venv
+*/uv.lock
+*/.python-version
+*/.env
+*/__pycache__
+*/old_files
+
+.git
+rep_git

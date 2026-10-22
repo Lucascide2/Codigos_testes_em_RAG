@@ -1,0 +1,28 @@
+[project]
+name = "implementacao-ragas"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "bert-score>=0.3.13",
+    "google-genai>=2.31.0",
+    "python-dotenv>=1.2.4",
+    "ragas",
+    "pydantic>=2.14.1",
+
+    # Dependências utilizadas para implantação da API
+    "uvicorn>=0.54.0",
+    "fastapi>=0.154.0",
+
+]
+
+[project.scripts]
+implementacao-ragas = "implementacao_ragas:main"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv.sources]
+ragas = { git = "https://github.com/Lucascide2/ragas-gemini.git" }

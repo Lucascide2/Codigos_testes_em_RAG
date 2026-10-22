@@ -1,0 +1,9 @@
+{
+    "query_ref_list": [
+        {
+            "query": "Quais as comunidades apresentadas no livro?",
+            "reference_contexts": ["Os verdes", "Os carcaça", "Os nômades"],
+            "reference": "Sim, Capitu era inocente desde o início"
+        }
+    ]
+}
