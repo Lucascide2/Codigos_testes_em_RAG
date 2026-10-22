@@ -4,6 +4,7 @@
 */.env
 */__pycache__
 */old_files
+*/src
 
 .git
 rep_git

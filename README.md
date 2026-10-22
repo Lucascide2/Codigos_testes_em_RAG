@@ -40,4 +40,4 @@ Mude o nome do arquivo .env.example para .env e insira corretamente sua API key 
 
 Rode o comando abaixo dentro do diretório ExtensaoV_RAG_Simples no terminal:
 
-`uv run streamlit app_generic.py`
+`uv run -m streamlit run app_generic.py`
