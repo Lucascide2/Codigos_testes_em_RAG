@@ -1,9 +1,104 @@
 {
     "query_ref_list": [
         {
+            "id": 1,
+            "answerable": "true",
+            "difficulty": "medium",
             "query": "Quais as comunidades apresentadas no livro?",
-            "reference_contexts": ["Os verdes", "Os carcaça", "Os nômades"],
-            "reference": "Sim, Capitu era inocente desde o início"
-        }
+            "reference_contexts": [
+                "oje, luta pela sobrevivência\nno meio de todo esse caos. o cafarnaum é a\nárea delimitada pelo córdomo onde ainda é\npossível aguentar a densidade de esporos\ninalados. \no cafarnaum\n5\n1 | mergulhe no caos\naglomerados de indivíduos formaram\ncomunidades ao longo do tempo, geralmente\nse encontram em áreas que ja foram globos\nde verde. elas são conhecidas por ainda restar\nárea plantável, mesmo que pareça que não vai\ndurar muito.\ncomunidades: os verdes\ncom menos frequência, grupos de indivíduos\ncom acordos comerciais e de grande\ngenialidade da arte de reutilizar neotralha\nmontam comunidades dentro de cemitérios.\napesar de não ser muito propício à saúde,\ntesouros tecnológicos são montados por eles.\ncomunidades: os carcaça\nos isolados do vazio formam comunidades,\nsendo elas em maioria de nômades e pela\npouca interação, já foram descritos como\n“atrasados” e pouco tecnológicos.\ncomunidades: os nômades\nexiste a lenda de comunidades no topo de\narranhacéus nas megalópoles que utilizam da\naltura para respirar menos esporos e fazer\nplantações acima do córdomo, onde bate mais\nsol.\ncomunidades: os astronautas\napesar dos costumes e documentos do velho\nmundo não serem de interesse para a maioria\nda popu",
+                "la\npouca interação, já foram descritos como\n“atrasados” e pouco tecnológicos.\ncomunidades: os nômades\nexiste a lenda de comunidades no topo de\narranhacéus nas megalópoles que utilizam da\naltura para respirar menos esporos e fazer\nplantações acima do córdomo, onde bate mais\nsol.\ncomunidades: os astronautas\napesar dos costumes e documentos do velho\nmundo não serem de interesse para a maioria\nda população, os restos de tecnologia\nencontrados em péssimo estado são capazes\nde gerar compostos sofisticados, armamentos\ne itens tão impressionantes quanto seu\ninventor conseguir imaginar. dentre as\ntecnologias perdidas estão: nanotec e reatores\nde fissão contidos em baterias minúsculas.\nneotralha\nresíduos radioativos herdados dos grandes\ncogumelos dos céus assolam essas áreas.\napesar de uma grande área ser afetada por\nessa radiação, quando o ar fica turvo e\namarelado é que se sabe que está dentro de\numa fenda.\nas fendas\naos poucos, descrobriu-se que os infectados\nnão somente andavam em ordas, mas que\neram capazes de se comunicar. mas, na\nverdade, eles não se comunicavam, eles são\num só, apelidaram de “consciência coletiva”\nou apenas de “a consciência”. \na consciência\npor conta da falta de luz"
+            ],
+            "reference": "As comunidades apresentadas no livro são os Verdes, os Carcaça, os Nômades e os Astronautas"
+        },
+        {
+            "id": 2,
+            "answerable": "true",
+            "difficulty": "easy",            
+            "query": "Onde os carcaça formam suas comunidades?",
+            "reference_contexts": [
+                "oje, luta pela sobrevivência\nno meio de todo esse caos. o cafarnaum é a\nárea delimitada pelo córdomo onde ainda é\npossível aguentar a densidade de esporos\ninalados. \no cafarnaum\n5\n1 | mergulhe no caos\naglomerados de indivíduos formaram\ncomunidades ao longo do tempo, geralmente\nse encontram em áreas que ja foram globos\nde verde. elas são conhecidas por ainda restar\nárea plantável, mesmo que pareça que não vai\ndurar muito.\ncomunidades: os verdes\ncom menos frequência, grupos de indivíduos\ncom acordos comerciais e de grande\ngenialidade da arte de reutilizar neotralha\nmontam comunidades dentro de cemitérios.\napesar de não ser muito propício à saúde,\ntesouros tecnológicos são montados por eles.\ncomunidades: os carcaça\nos isolados do vazio formam comunidades,\nsendo elas em maioria de nômades e pela\npouca interação, já foram descritos como\n“atrasados” e pouco tecnológicos.\ncomunidades: os nômades\nexiste a lenda de comunidades no topo de\narranhacéus nas megalópoles que utilizam da\naltura para respirar menos esporos e fazer\nplantações acima do córdomo, onde bate mais\nsol.\ncomunidades: os astronautas\napesar dos costumes e documentos do velho\nmundo não serem de interesse para a maioria\nda popu"
+            ],
+            "reference": "Os carcaça formam suas comunidades em Cemitérios"
+        },
+        {
+            "id": 3,
+            "answerable": "true",
+            "difficulty": "easy",            
+            "query": "Qual a descrição do posto de combatente?",
+            "reference_contexts": [
+                "ea ser afetada por\nessa radiação, quando o ar fica turvo e\namarelado é que se sabe que está dentro de\numa fenda.\nas fendas\naos poucos, descrobriu-se que os infectados\nnão somente andavam em ordas, mas que\neram capazes de se comunicar. mas, na\nverdade, eles não se comunicavam, eles são\num só, apelidaram de “consciência coletiva”\nou apenas de “a consciência”. \na consciência\npor conta da falta de luz solar por grandes\nperíodos de tempo e a queda das tecnologias\nque mantinham bosques vivos, o pouco de\nfauna e flora que ainda existiam foram quase\nextinguidos. animais noturnos, fungos,\nmusgos reinam sobre o cafarnaum. inclusive,\na vida não-humana a muito tempo não era tão\npresente. \nfauna e flora\n6\nseu sobrevivente\nc a p í t u l o   2\nseu sobrevivente\nos sobreviventes interpretados por jogadores\n(sj) são seres desolados pelo ambiente hostil\ndo novo mundo mas que de alguma forma\nderam um jeito de sobreviver. eles precisaram\nmentir, matar, se melhorar e fazer muitas\noutras coisas que nenhuma pessoa normal se\norgulharia.\ntodo sj inicia com 8 de vitalidade, 1 de\nproteção, 8 de evasão, 6q de movimento e\n10 fichas.\n2 | seu sobrevivente\n1. o básico\ncombatentes são os mais formidáveis em força f",
+                "\n(sj) são seres desolados pelo ambiente hostil\ndo novo mundo mas que de alguma forma\nderam um jeito de sobreviver. eles precisaram\nmentir, matar, se melhorar e fazer muitas\noutras coisas que nenhuma pessoa normal se\norgulharia.\ntodo sj inicia com 8 de vitalidade, 1 de\nproteção, 8 de evasão, 6q de movimento e\n10 fichas.\n2 | seu sobrevivente\n1. o básico\ncombatentes são os mais formidáveis em força física ou\nem manuseio de armamentos. proteja seus aliados e\ndestroce infectados como um combatente.\ncombatente\n+1 extra: disparo ou bater/arremessar \n+6 de proteção +1 extra: iniciativa\nrolagens de iniciativa tem vantagem. \nbatedores são bons em exploração, infiltração e caça.\nseja um mestre da furtividade ou perspicaz atirador e\nguie seu bando no vazio.\nbatedor\n+1 extra: furtividade, natureza ou sobrevivência \n+2 de evasão +2q de movimento \nao receber vantagem em um ataque, role 1 dado extra\nde dano da arma. \ncomandantes são ótimos líderes, se destacam pela\nhabilidade de mander o bando calmo e coordenar os\nconfrontos. mantenha a ordem como um comandante.\ncomandante\n+1 extra: lábia, intimidação ou intuição \n+1 de evasão +3 de proteção \nao falhar em uma rolagem, role novamente e escolha o\nre"
+            ],
+            "reference": "Os combatentes são os mais formidáveis em força física ou em manuseio de armamentos"            
+        },
+        {
+            "id": 4,
+            "answerable": "true",
+            "difficulty": "easy",            
+            "query": "O que aplicar pontos em resistência faz?",
+            "reference_contexts": [
+                "ua escolha de trampo garantir um +1 de\nbônus em alguma perícia que você já atingiu o\nbônus máximo (igual a 2), escolha qualquer\noutra perícia para colocar o bônus.\n \n2 | seu sobrevivente\nfísico: cada ponto colocado em físico garante\n+1 de bônus em uma perícia física (bônus\nmáximo em cada perícia é de 2). além de ser\nsomado em rolagens de dano com armas\ncorpo a corpo.\nintelecto: cada ponto em intelecto garante +1\nde bônus em uma perícia mental (bônus\nmáximo em cada perícia é de 2).\ncoragem: cada ponto em coragem permite\num uso de uma habilidade extra em um\nturno (ou entre) por sessão. realizar mais um\ndisparo ou 2 reações proteger seguidas são\nbons usos desse atributo. os usos são\nredefinidos no início da próxima sessão.\nresistência: cada ponto aumenta em +1 a\nvitalidade máxima e proteção, além de\naumentar o máximo de traumas do\nsobrevivente.\n6. distribua 3 pontos entre os atributos:\n7. monte seus contatos\nvocê não sobreviveu até agora sozinho, todos\nprecisam de ajuda, seja para trocar bens ou\ncomprar ração mais barato. mais difícil ainda\né chegar até aqui sem irritar ninguém ou\ndever fichas.\nseus contatos são os principais sls que\nparticiparam de seu passado, podendo estar\nte deven"
+            ],
+            "reference": "Os combatentes são os mais formidáveis em força física ou em manuseio de armamentos"            
+        },
+        {
+            "id": 5,
+            "answerable": "true",
+            "difficulty": "easy",            
+            "query": "Qual o método usado para os jogadores subirem de nível?",
+            "reference_contexts": [
+                "mitarras\ncamisa de correntes\nadagas (2)\nsucateiro  ( ba|en|es|me )\nfichas (15)\nrelíquias (4)\nmartelo\nneotralhas (12)\nba - batedor | cd - comandante | cb - combatente | en - engenhoqueiro | es - escriba | me - médico\n10. escolha duas habilidades especiais (1) abaixo:\ncorrer\ngatuno\nliderança\nexplorador nato\nparceiro animal conheço um cara\ncorpo de aço\nrobusto\nassinatura\nmédico de campo\ntitubear\nconhecimento de campo\ndesenfrear\nconfiabilidade\ntrator\nelusivo\nna verdade, veja bem\nplasgênico\nveja as descrições das habilidades no apêndice ii: habilidades especiais\numa habilidade não pode ser escolhida mais de uma vez, a menos que sua descrição diga o contrário.\n11\nencrenca em dobro perito\nsubindo de nível\ncom o passar do tempo, os sjs podem ficar\nmais fortes e ampliar seu leque de táticas para\nsobrevivência.\nquando subir de nível\ncafarnaum utiliza o método “milestone”, ou\nseja, o locutor decide o melhor momento dos\nsjs subirem de nível, seja por terem\nsobrevivido um ataque perigoso ou finalizado\numa missão importante. geralmente orbita\nentre 1-5 sessões por nível.\na cada nível, um sj recebe +4 em sua\nvitalidade máxima, além de bônus rotativos\ncomo mostra a tabela abaixo:\n2 | seu sobrevive",
+                "brevivência.\nquando subir de nível\ncafarnaum utiliza o método “milestone”, ou\nseja, o locutor decide o melhor momento dos\nsjs subirem de nível, seja por terem\nsobrevivido um ataque perigoso ou finalizado\numa missão importante. geralmente orbita\nentre 1-5 sessões por nível.\na cada nível, um sj recebe +4 em sua\nvitalidade máxima, além de bônus rotativos\ncomo mostra a tabela abaixo:\n2 | seu sobrevivente\nbônus por nível\nforça de atributo. ao chegar em um nível\nque garante esse bônus, adicione um ponto\nem qualquer atributo (máximo 3 em cada).\nalém disso, recebe:\numa quantidade de bônus em perícias\nfísicas igual ao seu físico.\numa quantidade de bônus em perícias\nmentais igual ao seu intelecto.\n+1 em vitalidade máxima e proteção\npara cada ponto em resistência.\nnível\n bônus\nsubindo de nível\n2\n3\n4\n5\n6\n7\n8\n9\nforça de atributo\n2 habilidades especiais (2 ou menor)\nforça de atributo, bônus máximo (3)\n1 habilidade especial (2 ou menor)\nforça de atributo, bônus máximo (4)\n1 habilidade especial (3 ou menor)\nforça de atributo, bônus máximo (5)\n1 habilidade especial (3 ou menor)\n[nº] habilidades especiais (1, 2 ou 3). ao\nchegar em um nível que garante esse bônus,\nescolha o número de habilidades espe"
+            ],
+            "reference": "Os combatentes são os mais formidáveis em força física ou em manuseio de armamentos"            
+        },
+        {
+            "id": 6,
+            "answerable": "False",
+            "difficulty": "not_applicable",            
+            "query": "Quem são os alunos que estão assistindo a aula de teste em aplicações de LLM/RAG?",
+            "reference_contexts": [],
+            "reference": "Não é possível responder à pergunta"                        
+        },
+        {
+            "id": 7,
+            "answerable": "False",
+            "difficulty": "not_applicable",            
+            "query": "Qual a cor da garrafa que está em cima da mesa próxima ao projetor?",
+            "reference_contexts": [],
+            "reference": "Não é possível responder à pergunta"                        
+        },
+        {
+            "id": 8,
+            "answerable": "True",
+            "difficulty": "easy",            
+            "query": "Me diga quais são os tipos de ações, considerando a definição de ação do livro",
+            "reference_contexts": [
+                "empo” necessário para realizar tal\nhabilidade. então, para entender-las, é\nnecessário entender antes os tipos de noção\nde “tempo” presentes nesse jogo.\no tempo\ncena: uma cena é o tempo de uma conversa,\ncombate, exploração, o tempo de uma cena\nnão é exato. podem ser minutos ou horas.\naqui vão alguns exemplos:\nturno: um turno é o tempo de um sj realizar\nações em uma cena até ser a vez de outro sj\nrealizar as suas, em geral por volta de alguns\nsegundos. nem sempre é necessário\nestabelecer essa medida de turnos, mas elas\nsão bastante utilizadas em confrontos.\nveja mais sobre turnos em “confronto”.\nações: ações são tomadas em um turno,\ncomo ataques, movimento. existem 3 tipos de\nação: básica, rápida e reação.\nveja mais sobre ações em “confronto”.\ncusto\nquando uma habilidade se referir à custo ela\nestá se referindo a que tipo de tempo ela\nrequer, ou, em casos específicos, não custar\ntempo, nesse caso o custo será passivo.\nos custos são: ação básica, ação rápida,\nreação, turno, cena.\ntipo\nabaixo do nome da habilidade estará o tipo de\nhabilidade, algumas habilidades são comuns\npara todos os sobreviventes, outras são\nrestritas. os tipos são apenas separações que\nsão explicadas quando releva"
+            ],
+            "reference": "Os 3 tipos de ações são Ação Básica, Ação Rápida e Ação de Reação"                        
+        },
+        {
+            "id": 9,
+            "answerable": "True",
+            "difficulty": "Hard",               
+            "query": "Quais são as propriedades das armas, que são apresentadas no livro?",
+            "reference_contexts": [
+                "s, adagas.\npara atacar com elas o sobrevivente precisa\nestar adjacente ao alvo. além disso, a rolagem\nde perícia para atacar com elas é\nbater/arremessar.\nà distancia\nessas armas são pistolas, metralhadoras. ao\nrealizar pelo menos um disparo em um\nconfronto, gasta um slot de munição do tipo\nigual ao da arma utilizada (simples, leve ou\nneotralha), ou, uma bala média por disparo no\ncom armas médias. se houver um inimigo\nadjacente à você, sua rolagem de disparo tem\ndesvantagem.\n62\npropriedades\ntodas as armas possuem propriedades que\nmodificam sua forma de uso, além do dano da\narma que dita a rolagem de dano utilizando a\narma. as propriedades são:\nalcance:  é a distância que uma arma corpo a\ncorpo pode atingir, ao invés de adjacente. \narremesso: é a distância que uma arma corpo\na corpo pode ser arremessada em um alvo,\napós isso cai no chão.\ncontenção: \ncontundente: se pelo menos um dado na\nrolagem de dano da arma for máximo, o alvo\né recebe condição: caído(d, m/2, ve).\ncortante: se o ataque eliminar o alvo, escolha\noutro alvo no alcance para causar sofrer a\nmesma rolagem de dano que eliminou o\nprimeiro alvo.\ndistância.  a distância que os disparos podem\nser realizados normalmente, e o d",
+                " representa a\nquantidade de munições disparadas por vez.\numa rolagem de disparo deve ser feita para\ncada disparo. você deve declarar uma rajada,\nou tiro único, antes de realizar o primeiro\ndisparo. cada rolagem de disparo em uma\nrajada tem um bônus acumulativo de -1.\nrecarga: após um disparo, é necessário\nutilizar a habilidade: recarregar  para poder\nfazer outro disparo.\nsilencioso: disparos realizados dessas armas\nnão fazem barulho.\n63\n3 | esquecidos\narmamentos esquecidos\narma\ncorpo a corpo\n     sem arma\n          desarmado\n     rudimentar\n          bastão\n          lança\n          martelo\n     especial\n          adaga\n          cimitarra\n          katana\n          kusarigama\n          machado de bombeiro\n          nunchako\n          zweihänder\nà distância\n     simples\n          arco\n          besta\n     leve\n          pistola\n          revólver\n     média\n          aug\n          desert eagle\n          escopeta\n          rifle de caça\n1d4 / 1d2\n1d8 / 1d6\n1d8 / 1d4\n1d6 / 1d6\n1d4 / 1d4\n1d8 / 1d8\n1d12+1/1d8+1\n1d8 / 1d8\n3d6+3\n1d8 / 1d6\n2d10\n1d10+1\n2d8+1\n2d8\n3d6\n2d12\n4d8\n5d6\n5d8\npropriedades\n--\nduas mãos, contundente\narremesso: 4q, duas mãos, alcance: 1q\nleve\narremesso: 6q, leve\ncortan"
+            ],
+            "reference": "As armas possuem as propriedades de 'Alcance', 'Arremesso', 'Contenção', 'Contundente', 'Cortante', 'Distância', 'Desarme', 'Duas mãos', 'Espalhar', 'Leve', 'Perfurante', 'Pesado', 'Pressão', 'Rajada', 'Recarga' e 'Silencioso'"                        
+        },
+        {
+            "id": 10,
+            "answerable": "True",
+            "difficulty": "Hard",            
+            "query": "O que a propriedade de armas 'Perfurante' faz?",
+            "reference_contexts": [
+                "descrito na propriedade sofrem uma rolagem\nde dano. ataques adjacentes não tem\ndesvantagem. a cada 1 quadrado de distância,\na arma perde 1 dado de dano, até não ter\nmais dano, seu alcance é baseado na própria\npropriedade.\nleve:  ataques bônus efetuados com essas\narmas não recebem o bônus negativo na\nrolagem de ataque. podem ser carregadas\nfora da ficha do sobrevivente, assim, sem\nocupar espaço. \nperfurante:  se o disparo eliminar o alvo e a\nrolagem de disparo também acertar um alvo\nem linha reta atrás do primeiro, ambos\nsofrem a rolagem de dano.\npesado:  cada ataque requer o uso da\nhabilidade: ataque pesado com custo ação\nbásica + ação rápida.\npressão: se pelo menos um dado na rolagem\nde dano da arma for máximo, o alvo não pode\na habilidade: proteção para esse ataque.\nrajada: a propriedade representa a\nquantidade de munições disparadas por vez.\numa rolagem de disparo deve ser feita para\ncada disparo. você deve declarar uma rajada,\nou tiro único, antes de realizar o primeiro\ndisparo. cada rolagem de disparo em uma\nrajada tem um bônus acumulativo de -1.\nrecarga: após um disparo, é necessário\nutilizar a habilidade: recarregar  para poder\nfazer outro disparo.\nsilencioso: disparos reali"
+            ],
+            "reference": "Se o disparo eliminar o alvo e a Rolagem de Disparo também acertar um alvo em linha reta atrás do primero, ambos sofrem Rolagem de Dano."                                  
+        }    
     ]
 }

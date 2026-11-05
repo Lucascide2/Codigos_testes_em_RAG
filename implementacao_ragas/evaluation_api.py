@@ -18,7 +18,7 @@ from rag_metrics import rag_apply_metric, MetricsResponse
 
 load_dotenv()
 
-LLM_MODEL = os.getenv("RAGAS_LLM_MODEL", "gemini-3.5-flash-lite")
+LLM_MODEL = os.getenv("RAGAS_LLM_MODEL", "gemini-3.1-flash-lite")
 EMBEDDING_MODEL = os.getenv("RAGAS_EMBEDDING_MODEL", "gemini-embedding-001")
 
 

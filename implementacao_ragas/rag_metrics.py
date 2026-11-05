@@ -24,6 +24,13 @@ class MetricsResponse(BaseModel):
     value: float | dict[str, float] | str
     value_type_str: str
 
+class LLMJudgeResponse(BaseModel):
+
+    content: str = Field(
+        description="Texto de resposta estruturado de acordo com o prompt de instrução do modelo."
+    )
+
+
 if TYPE_CHECKING:
     from ragas.llms import InstructorBaseRagasLLM
 
@@ -205,22 +212,38 @@ def bertscore(
 
 
 
-JUDGE_PROMPT = """You are evaluating a RAG system response.
+JUDGE_PROMPT = """Você está avaliando uma resposta de um sistema RAG.
 
-Question: {question}
-Retrieved Context: {context}
-Generated Answer: {answer}
+Pergunta: {query}
+Contexto recuperado: {context}
+Resposta gerada: {answer}
 
-Rate the following on a scale of 1-5:
-1. Faithfulness: Is the answer supported by the context?
-2. Relevance: Does the answer address the question?
-3. Completeness: Does the answer cover all aspects?
+Avalie os seguintes critérios em uma escala de 1 a 5:
 
-Provide scores and brief justification."""
+Faithfulness: A resposta é sustentada pelas informações presentes no contexto?
+Relevance: A resposta responde a pergunta do usuário?
+Completeness: A resposta contempla todos os aspectos necessários?
+
+Forneça as pontuações e uma breve justificativa para cada critério.
+
+Siga o exemplo de resposta abaixo e siga na geração das respostas as observações entre as setas "<" e ">", não levando-as ao texto de resposta.
+
+AVALIAÇÃO LLM-AS-JUDGE (Deve estar presente)
+
+Faithfulness: 5 (Deve-se haver uma quebra de linha até o próximo texto)
+Relevance: 1 (Deve-se haver uma quebra de linha até o próximo texto)
+Completeness: 5 (Deve-se haver 2 quebras de linhas até o texto "justificativa")
+
+Justificativa: 
+
+O modelo apresenta um alto valor de faithfulness porque a resposta contempla o conteúdo dos dois primeiros contextos recuperados, porém o baixo valor de relevância se dá porque ...
+
+
+"""
 
 
 async def llm_judge(
-    question: str,
+    query: str,
     context: str | list[str],
     answer: str,
     llm,
@@ -242,12 +265,15 @@ async def llm_judge(
         context = "\n\n".join(context)
 
     prompt = JUDGE_PROMPT.format(
-        question=question,
+        query=query,
         context=context,
         answer=answer,
     )
 
-    response = await llm.ainvoke(prompt)
+    response = await llm.agenerate(
+        prompt,
+        response_model=LLMJudgeResponse
+    )
     return getattr(response, "content", response)
 
 METRICS: dict[str, Callable] = {
@@ -267,7 +293,7 @@ REQUIRED_FIELDS = {
     "map": {"retrieved_contexts", "reference_contexts"},
     "rouge-1": {"response", "reference"},
     "bertscore": {"response", "reference"},
-    "llm_judge": {"question", "retrieved_contexts", "response"},
+    "llm_judge": {"query", "retrieved_contexts", "response"},
 }
 
 
@@ -296,7 +322,7 @@ async def rag_apply_metric(
     try:
         if metric == "llm_judge":
             value = await METRICS[metric](
-                question=interaction["query"],
+                query=interaction["query"],
                 context=interaction["retrieved_contexts"],
                 answer=interaction["response"],
                 llm=llm,

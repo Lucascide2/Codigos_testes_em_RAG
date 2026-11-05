@@ -29,7 +29,7 @@ from vector_db_creation import (
 
 
 PROJECT_DIRECTORY = Path(__file__).resolve().parent
-DEFAULT_GEMINI_MODEL = "gemini-3.5-flash-lite"
+DEFAULT_GEMINI_MODEL = "gemini-3.1-flash-lite"
 DEFAULT_EVALUATE_URL = "http://localhost:8000/evaluate"
 DEFAULT_METRICS_URL = "http://localhost:8000/metrics"
 DEFAULT_GROUND_TRUTH_PATH = PROJECT_DIRECTORY / "ground_truth.json"
@@ -550,39 +550,74 @@ def chunk_texts(results: list[dict[str, Any]]) -> list[str]:
     return [result["text"] for result in results]
 
 
+import random
+from pathlib import Path
+from typing import Any
+
+DEFAULT_CHUNK_SIZE = 1200
+DEFAULT_CHUNK_OVERLAP = 400
+
+
+def split_into_chunks(
+    text: str,
+    chunk_size: int = DEFAULT_CHUNK_SIZE,
+    chunk_overlap: int = DEFAULT_CHUNK_OVERLAP,
+) -> list[str]:
+
+    if chunk_overlap >= chunk_size:
+        raise ValueError("chunk_overlap deve ser menor que chunk_size")
+
+    chunks = []
+    step = chunk_size - chunk_overlap
+
+    for start in range(0, len(text), step):
+        chunk = text[start:start + chunk_size]
+
+        if chunk.strip():
+            chunks.append(chunk)
+
+    return chunks
+
+
 def pick_irrelevant_chunks(
-    vector_store: FAISS,
     retrieved: list[dict[str, Any]],
     count: int,
     seed: int,
 ) -> list[dict[str, Any]]:
-    """Sample chunks from the index that were not retrieved for the question.
-
-    Chunks from files other than the retrieved ones are preferred, which makes
-    it unlikely that the sampled chunks are relevant to the question.
-    """
-    docstore = getattr(vector_store, "docstore", None)
-    documents = list(getattr(docstore, "_dict", {}).values())
-    retrieved_texts = {result["text"] for result in retrieved}
-    retrieved_files = {source_of(result["metadata"])[0] for result in retrieved}
-
-    candidates = [d for d in documents if d.page_content not in retrieved_texts]
-    preferred = [d for d in candidates if source_of(d.metadata)[0] not in retrieved_files]
-    fallback = [d for d in candidates if d not in preferred]
 
     rng = random.Random(seed)
-    rng.shuffle(preferred)
-    rng.shuffle(fallback)
-    chosen = (preferred + fallback)[:count]
-    if not chosen:
-        raise RuntimeError(
-            "Não foi possível obter trechos irrelevantes a partir do índice FAISS."
-        )
-    return [
-        {"text": doc.page_content, "metadata": dict(doc.metadata), "score": 0.0}
-        for doc in chosen
-    ]
 
+    # Lê o texto de origem dos chunks irrelevantes.
+    source_path = Path("./irrelevant_text.txt")
+    source_text = source_path.read_text(encoding="utf-8")
+
+    # Divide o conteúdo conforme a configuração dos chunks originais.
+    generated_chunks = split_into_chunks(
+        source_text,
+        chunk_size=DEFAULT_CHUNK_SIZE,
+        chunk_overlap=DEFAULT_CHUNK_OVERLAP,
+    )
+
+    if count > len(generated_chunks):
+        raise ValueError(
+            f"Foram solicitados {count} chunks, mas o arquivo "
+            f"permite gerar apenas {len(generated_chunks)} chunks."
+        )
+
+    selected_chunks = rng.sample(generated_chunks, count)
+
+    return [
+        {
+            "text": chunk,
+            "score": random.choice([7, 8, 9, 10]),
+            "metadata": {
+                "source": str(source_path),
+                "file_name": source_path.name,
+                "pages": "N/A",
+            },
+        }
+        for chunk in selected_chunks
+    ]
 
 def build_counterfactual_chunk(
     client: genai.Client,
@@ -767,7 +802,7 @@ def compute_rag_metrics(
     # ---- Etapa 2: ruído -> Robustez ao ruído -------------------------------- #
     progress("Etapa 2/4 · Contexto com trechos irrelevantes (robustez ao ruído)")
     noise = pick_irrelevant_chunks(
-        vector_store, base_results, len(base_results), NOISE_RANDOM_SEED
+        base_results, len(base_results), NOISE_RANDOM_SEED
     )
     noisy_results = [*base_results, *noise]
     random.Random(NOISE_RANDOM_SEED).shuffle(noisy_results)
@@ -950,7 +985,7 @@ def metrics_view(
     if st.button("Calcular métrica", type="primary", disabled=metric is None):
         payload_interaction = {
             **interaction,
-            "retrieved_references": reference_contexts,
+            "reference_contexts": reference_contexts,
             "reference": reference or "",
         }
 
