@@ -35,6 +35,8 @@ DEFAULT_METRICS_URL = "http://localhost:8000/metrics"
 DEFAULT_GROUND_TRUTH_PATH = PROJECT_DIRECTORY / "ground_truth.json"
 EVALUATE_TIMEOUT_SECONDS = 180
 METRIC_CARDS_PER_ROW = 3
+DEFAULT_CHUNK_SIZE = 1200
+DEFAULT_CHUNK_OVERLAP = 400
 
 # Rótulo exibido -> metric_str aceito pela rota /evaluate
 METRIC_OPTIONS: dict[str, str] = {
@@ -460,7 +462,7 @@ def standard_tests_view(
         "Threshold (limiar)",
         min_value=0.0,
         max_value=1.0,
-        value=0.5,
+        value=0.7,
         step=0.05,
         format="%.2f",
     )
@@ -548,15 +550,6 @@ def source_of(metadata: dict[str, Any]) -> tuple[str, str]:
 
 def chunk_texts(results: list[dict[str, Any]]) -> list[str]:
     return [result["text"] for result in results]
-
-
-import random
-from pathlib import Path
-from typing import Any
-
-DEFAULT_CHUNK_SIZE = 1200
-DEFAULT_CHUNK_OVERLAP = 400
-
 
 def split_into_chunks(
     text: str,
